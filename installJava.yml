@@ -1,0 +1,12 @@
+---
+- name: "install java"
+  hosts: firstTwo
+  sudo: true
+  tasks:
+  - name: "apt-get update"
+    command: "apt-get update"
+  - name: "install openJDK"
+    apt: name=openjdk-7-jre state=present
+
+
+
