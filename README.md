@@ -50,7 +50,7 @@ So we have three VMs with the IPs 192.168.23.10|20|30
 They are defined in the hosts file which ansible will call an inventory.
 Have a look at it.
 
-As you can see there are three hosts with the ssh username and ssh key configure.
+As you can see there are three hosts with the ssh user name and ssh key configured.
 Ansible connects to remote system via ssh per default.
 
 Also you will have noticed the [firstTwo] and [lastTwo] entries.
@@ -85,8 +85,8 @@ and run it with the ansible-playbook command:
 
 	ansible-playbook -i hosts installJava.yml
 
-Note that we run the above playbook on the firstTwo-group only.
-Now let's check the result:
+Note that we ran the above playbook on the firstTwo-group only.
+Let's check the result:
 
 	ansible all -i hosts -m command --args "which java"
 
@@ -100,12 +100,13 @@ This is what I get:
 	192.168.23.10 | success | rc=0 >>
 	/usr/bin/java
 
-So VM1 and VM2 have java installed now and VM3 is untouched. But how exactly did this happen? Let's have a closer look.
-We used two modules in the playbook: ```command``` and ```apt```. We knew ```command``` already as we used it as an ad-hoc ansible call.
-```apt``` is new and can be used to install, remove, ... packages on debian-based systems.
+So VM1 and VM2 have java installed now but VM3 is untouched. How exactly did this happen? Let's have a closer look.
+We used two modules in this playbook: ```command``` and ```apt```. We knew ```command``` already as we used it as an ad-hoc ansible call. Remeber ```ansible <snip> -m command --args "uptime"```
+
+```apt``` is new and can be used to install, remove etc. packages on debian-based systems.
 
 There is a bunch of more modules e.g. ```yum``` to install packages on CentOS / RHEL systems.
-Go and check out all (ansible modles)[].
+Go and check out all (ansible modles)[https://docs.ansible.com/ansible/modules_by_category.html].
 
 Of course there is more ansible can do for you but I hope this got you started well.
 Check out the (ansible docs)[https://docs.ansible.com/], reset your VMs (```vagrant snapshot back vm1; vagrant snapshot back vm2```) and write your own playbooks.
