@@ -1,4 +1,4 @@
-# Ansible demo utilizing vagrant
+# Ansible demo setup
 
 This is a small setup to bring you an ansible playground as fast as possible.
 We will have some virtualbox debian VMs to operate on, so you are good do whatever you want with ansible in a save environment.
