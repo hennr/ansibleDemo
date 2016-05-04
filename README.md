@@ -26,10 +26,6 @@ With these snapshot you can always get fresh VMs with:
 	 vagrant snapshot back vm2
 	 vagrant snapshot back vm3
 
-Note: To shut down the VMs run:
-
-	vagrant halt
-
 To verify our setup, let's fire our first ansible command:
 
 	ansible all --inventory-file=hosts --module-name command --args "uptime"
@@ -106,9 +102,11 @@ We used two modules in this playbook: ```command``` and ```apt```. We knew ```co
 ```apt``` is new and can be used to install, remove etc. packages on debian-based systems.
 
 There is a bunch of more modules e.g. ```yum``` to install packages on CentOS / RHEL systems.
-Go and check out all (ansible modles)[https://docs.ansible.com/ansible/modules_by_category.html].
+Go and check out all [ansible modles](https://docs.ansible.com/ansible/modules_by_category.html).
 
 Of course there is more ansible can do for you but I hope this got you started well.
-Check out the (ansible docs)[https://docs.ansible.com/], reset your VMs (```vagrant snapshot back vm1; vagrant snapshot back vm2```) and write your own playbooks.
+Check out the [ansible docs](https://docs.ansible.com), reset your VMs (```vagrant snapshot back vm1; vagrant snapshot back vm2```) and write your own playbooks.
 
+When you are done with playing remember to shut down your VMs with:
 
+	vagrant halt
