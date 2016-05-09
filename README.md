@@ -5,7 +5,7 @@ We will have some virtualbox debian VMs to operate on, so you are good do whatev
 
 ## Prerequisites
 
-You will need virtualbox, vagrant and ansbile installed and about 1,2GB of free RAM.
+You will need virtualbox, vagrant (**v. 1.7+**) and ansbile installed and about 1,2GB of free RAM.
 
 ## Bring it on
 
